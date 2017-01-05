@@ -1,0 +1,3 @@
+rootProject.name = 'hystrix-example'
+include 'movie-api'
+include 'client-app'

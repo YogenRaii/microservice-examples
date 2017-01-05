@@ -1,0 +1,6 @@
+server:
+  port: 8082
+
+movie-api:
+  ribbon:
+    listOfServers: http://localhost:8090
