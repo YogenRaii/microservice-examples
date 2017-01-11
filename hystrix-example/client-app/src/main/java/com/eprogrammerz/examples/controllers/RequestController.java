@@ -30,7 +30,7 @@ public class RequestController {
 
     /**
      * Helper method to provide the random long number
-     * @return
+     * @return long number between 1200 and 1
      */
     private long getLuckyMovieId(){
 

@@ -15,14 +15,8 @@ public class MovieService {
     @Autowired
     MovieApi movieApi;
 
-//    @HystrixCommand(fallbackMethod = "findMovieFallback")
     public Movie findMovie(Long id){
         Movie movieOfTheDay = movieApi.getMovie(id);
         return movieOfTheDay;
     }
-
-    public Movie findMovieFallback(Long id){
-        return new Movie("Avatar", "James Camerson", "8/10");
-    }
-
 }
