@@ -10,7 +10,7 @@
 
 # embedded server
 server:
-  context-path: /client
+#  context-path: /client
   port: 8082
 
 message: Hello World!!!!!

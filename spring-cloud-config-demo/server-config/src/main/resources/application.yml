@@ -8,5 +8,4 @@ spring:
           uri: C:/Yogen/examples/microservice-examples/spring-cloud-config-demo/config #classpath:/ #located in the $rootDir/config
 
 server:
-  context-path: /config
   port: 8888

@@ -30,13 +30,13 @@ dependencyManagement {
 }
 
 
-sourceSets {
+/*sourceSets {
 	main {
 		resources {
 			srcDirs 'src/main/resources', "$rootDir/config"
 		}
 	}
-}
+}*/
 
 eclipse {
 	classpath {
