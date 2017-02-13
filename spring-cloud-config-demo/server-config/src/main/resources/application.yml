@@ -5,7 +5,7 @@ spring:
     config:
       server:
         git:
-          uri: C:/Yogen/examples/microservice-examples/spring-cloud-config-demo/config #classpath:/ #located in the $rootDir/config
+          uri: file://Yogen/examples/microservice-examples/spring-cloud-config-demo/config #classpath:/ #located in the $rootDir/config
 
 server:
   port: 8888
