@@ -4,8 +4,8 @@ spring:
   cloud:
     config:
       server:
-        native:
-          search-locations: classpath:/ #located in the $rootDir/config
+        git:
+          uri: C:/Yogen/examples/microservice-examples/spring-cloud-config-demo/config #classpath:/ #located in the $rootDir/config
 
 server:
   context-path: /config

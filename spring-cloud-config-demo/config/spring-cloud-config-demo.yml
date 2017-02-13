@@ -13,4 +13,4 @@ server:
   context-path: /client
   port: 8082
 
-message: Hello World!11
+message: Hello World!
