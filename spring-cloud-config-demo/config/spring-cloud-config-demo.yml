@@ -1,0 +1,16 @@
+
+---
+# The values stored here are shared across all profiles
+spring:
+  jmx:
+    default-domain: 'spring-cloud-config-demo-jmx'
+
+#logging:
+#  config: classpath:logging/log4j2-dvl.yml
+
+# embedded server
+server:
+  context-path: /client
+  port: 8082
+
+message: Hello World!11

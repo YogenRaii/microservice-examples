@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: spring-cloud-config-demo
+  cloud:
+    config:
+      uri: ${CONFIG_SERVER_URL}
+      fail-fast: true
+management:
+  security:
+    enabled: false
+#      label: ${CONFIG_SERVER_LABEL}
