@@ -6,7 +6,7 @@ spring:
       server:
         git:
           uri: https://github.com/YogenRaii/microservice-examples
-          search-paths: 'spring-cloud-config-demo' #classpath:/ #located in the $rootDir/config
+          search-paths: cloud-config #classpath:/ #located in the $rootDir/config
 
 server:
   port: 8888
