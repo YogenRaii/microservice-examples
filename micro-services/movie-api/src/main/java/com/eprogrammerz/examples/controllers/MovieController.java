@@ -22,17 +22,21 @@ import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
 @RestController
 @Slf4j
 public class MovieController {
+    private final MovieRepository movieRepository;
+
     @Autowired
-    private MovieRepository movieRepository;
+    public MovieController(MovieRepository movieRepository) {
+        this.movieRepository = movieRepository;
+    }
 
     @RequestMapping("/movies/{id}")
-    public ResponseEntity<Movie> getBook(@PathVariable("id") Long id) {
-        log.trace("getBook({})", id);
+    public ResponseEntity<Movie> getMovie(@PathVariable("id") Long id) {
+        log.trace("getMovie({})", id);
         Optional<Movie> movieOptional = Optional.ofNullable(movieRepository.findOneById(id));
         return movieOptional
                 .map(movie -> {
                     Resource<Movie> movieResource = new Resource<>(movie);
-                    movieResource.add(linkTo(methodOn(MovieController.class).getBook(id)).withSelfRel());
+                    movieResource.add(linkTo(methodOn(MovieController.class).getMovie(id)).withSelfRel());
                     return new ResponseEntity(movieResource, HttpStatus.OK);
                 })
                 .orElse(ResponseEntity.notFound().build());
