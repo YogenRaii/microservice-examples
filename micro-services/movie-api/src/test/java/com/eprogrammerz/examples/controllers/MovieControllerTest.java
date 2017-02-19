@@ -1,7 +1,7 @@
 package com.eprogrammerz.examples.controllers;
 
 import com.eprogrammerz.examples.models.Movie;
-import com.eprogrammerz.examples.repositories.MovieRepository;
+import com.eprogrammerz.examples.repositories.MovieRepositoryImpl;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -16,6 +16,9 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.core.IsEqual.equalTo;
+
 /**
  * Created by 542596 on 2/19/2017.
  */
@@ -25,7 +28,7 @@ import org.springframework.web.context.WebApplicationContext;
 public class MovieControllerTest {
     private MovieController classUnderTest;
 
-    private MovieRepository movieRepositoryMock;
+    private MovieRepositoryImpl movieRepositoryImplMock;
 
     @Autowired
     private WebApplicationContext context;
@@ -36,8 +39,8 @@ public class MovieControllerTest {
     public void setUp() {
         this.mockMvc = MockMvcBuilders.webAppContextSetup(this.context).build();
 
-        movieRepositoryMock = Mockito.mock(MovieRepository.class);
-        classUnderTest = new MovieController(movieRepositoryMock);
+        movieRepositoryImplMock = Mockito.mock(MovieRepositoryImpl.class);
+        classUnderTest = new MovieController(movieRepositoryImplMock);
     }
 
     @After
@@ -48,10 +51,11 @@ public class MovieControllerTest {
     @Test
     public void getBookReturnsBookObject() throws Exception {
         Movie movie = new Movie(1207, "Awesome Movie", "Me Myself", "4/5");
-        Mockito.when(movieRepositoryMock.findOneById(Matchers.anyLong())).thenReturn(movie);
+        Mockito.when(movieRepositoryImplMock.findOneById(Matchers.anyLong())).thenReturn(movie);
 
         ResponseEntity<Movie> responseEntity = classUnderTest.getMovie(1200L);
-        System.out.println(responseEntity);
+
+        assertThat("Code is 200.", responseEntity.getStatusCodeValue(), equalTo(200));
     }
 
 }

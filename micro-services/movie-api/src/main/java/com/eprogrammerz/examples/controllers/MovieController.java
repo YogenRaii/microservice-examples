@@ -1,7 +1,7 @@
 package com.eprogrammerz.examples.controllers;
 
 import com.eprogrammerz.examples.models.Movie;
-import com.eprogrammerz.examples.repositories.MovieRepository;
+import com.eprogrammerz.examples.repositories.MovieRepositoryImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.Resource;
@@ -22,17 +22,17 @@ import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
 @RestController
 @Slf4j
 public class MovieController {
-    private final MovieRepository movieRepository;
+    private final MovieRepositoryImpl movieRepositoryImpl;
 
     @Autowired
-    public MovieController(MovieRepository movieRepository) {
-        this.movieRepository = movieRepository;
+    public MovieController(MovieRepositoryImpl movieRepositoryImpl) {
+        this.movieRepositoryImpl = movieRepositoryImpl;
     }
 
     @RequestMapping("/movies/{id}")
     public ResponseEntity<Movie> getMovie(@PathVariable("id") Long id) {
         log.trace("getMovie({})", id);
-        Optional<Movie> movieOptional = Optional.ofNullable(movieRepository.findOneById(id));
+        Optional<Movie> movieOptional = Optional.ofNullable(movieRepositoryImpl.findOneById(id));
         return movieOptional
                 .map(movie -> {
                     Resource<Movie> movieResource = new Resource<>(movie);

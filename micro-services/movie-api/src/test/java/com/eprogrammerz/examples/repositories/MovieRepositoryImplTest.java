@@ -11,10 +11,10 @@ import static org.junit.Assert.*;
  * Created by Yogen on 12/25/2016.
  */
 @RunWith(MockitoJUnitRunner.class)
-public class MovieRepositoryTest {
+public class MovieRepositoryImplTest {
 
     @InjectMocks
-    private MovieRepository repository;
+    private MovieRepositoryImpl repository;
 
     @Test
     public void findOneByIdTest(){
