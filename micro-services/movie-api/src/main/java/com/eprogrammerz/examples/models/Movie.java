@@ -12,7 +12,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class Movie implements Serializable {
+public class Movie  implements Serializable {
     private static final long serialVersionUID = 2987521091221161580L;
     private long id;
     private String name;

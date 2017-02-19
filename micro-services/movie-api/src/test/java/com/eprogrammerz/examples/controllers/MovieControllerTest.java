@@ -6,7 +6,6 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Matchers;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -16,8 +15,14 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
+import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.is;
 import static org.hamcrest.core.IsEqual.equalTo;
+
+/**
+ * @author Josh Long
+ */
 
 /**
  * Created by 542596 on 2/19/2017.
@@ -51,10 +56,10 @@ public class MovieControllerTest {
     @Test
     public void getBookReturnsBookObject() throws Exception {
         Movie movie = new Movie(1207, "Awesome Movie", "Me Myself", "4/5");
-        Mockito.when(movieRepositoryImplMock.findOneById(Matchers.anyLong())).thenReturn(movie);
+        Mockito.when(movieRepositoryImplMock.findOneById(org.mockito.Matchers.anyLong())).thenReturn(movie);
 
-        ResponseEntity<Movie> responseEntity = classUnderTest.getMovie(1200L);
-
+        ResponseEntity<Movie> responseEntity = classUnderTest.getMovie(1207L);
+        assertThat("Response Enitity is not null.", responseEntity, is(notNullValue()));
         assertThat("Code is 200.", responseEntity.getStatusCodeValue(), equalTo(200));
     }
 

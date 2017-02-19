@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Optional;
 
-import static org.springframework.hateoas.core.DummyInvocationUtils.methodOn;
 import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
+import static org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn;
 
 /**
  * Created by rajkumar on 12/25/2016.
