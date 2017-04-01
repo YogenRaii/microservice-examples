@@ -1,0 +1,95 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Provide the IDs in order to look for the content",
+    "version": "0.1",
+    "title": "Movie API - build # 0.0.1",
+    "license": {
+      "name" : "private"
+    }
+  },
+  "host": "localhost:8085",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "movie-controller",
+      "description": "Movie Controller"
+    }
+  ],
+  "paths": {
+    "/movies/{id}": {
+      "get": {
+        "tags": [
+          "movie-controller"
+        ],
+        "summary": "getBook",
+        "operationId": "getBookUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Movie"
+            }
+          },
+          "404": {
+            "description": "Document NOT FOUND!"
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Error" : {
+      "type" : "object",
+      "properties" : {
+        "errorCode" : {
+          "type" : "integer",
+          "format": "int64"
+        },
+        "message" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Movie": {
+      "type": "object",
+      "properties": {
+        "directorName": {
+          "type": "string"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "name": {
+          "type": "string"
+        },
+        "rating": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
