@@ -1,19 +1,19 @@
-# Content-API
-Content API - `/content-delivery/` - provides the attributes on the basis of applicationId, channelId, pageId, productIds etc.
+# Sample-API
+Sample API - `/sample-api/` - API description.
 
 ## API Endpoints
-1. 	**Endpoint to get master information for all the brands and products**
+1. 	**Sample 1**
 
     ```
-    GET               /content-delivery/v1/master
+    GET               /resource/path/{id}
     ```
     
     Parameters: None
 
-2.	**Endpoint to get the channel, application, page specific brands and products information**
+2.	**Sample 2**
 
     ```
-    POST               /content-delivery/v1/brands/products
+    POST               /resource/path
     ```
     
    The request body should be in format below:
@@ -21,18 +21,6 @@ Content API - `/content-delivery/` - provides the attributes on the basis of app
    ```
    {
 	"request": {
-		"appId": "string",
-		"brandAndProducts": [{
-			"brand": {
-				"id": "string"
-			},
-			"products": [{
-				"id": "string"
-			}]
-		}],
-		"channelId": "string",
-		"pageId": "string",
-		"transactionId": "string",
 		"type": "string"
 	}
 }
@@ -42,11 +30,7 @@ Content API - `/content-delivery/` - provides the attributes on the basis of app
     
     | Name	       | Mandatory	       |  Description                          |
     | -----------  |:-----------------:| -------------------------------------:|
-    | channelId	   |  Yes	           | Channel information                   |
-    | applicationId|  Yes	           | Application within the channel        |
-    | pageId	   |  Yes	           | Page / View within the application    |
-    | brandId	   |  No    (Optional) | Comma-delimited list of brand Ids     |
-    | productId    |  No    (Optional) | Comma-delimited list of product Ids   |
+    | param1	   |  Yes	           | Input params                 |
 
 ## Workspace Requirements
 
@@ -61,11 +45,11 @@ Content API - `/content-delivery/` - provides the attributes on the basis of app
 
 ## Setting Up
 
-1. Clone `Content-API` repository using Git command:
+1. Clone `Sample-API` repository using Git command:
 
    ```
-     git clone https://github.com/jetway/content-api.git
-     cd content-api
+     git clone https://github.com/sample/sample-api.git
+     cd sample
    ```
 2. Run ./gradlew. This will fetch all the dependencies. For the first time, you will need to be connected over VPN. To build the project run ./gradlew build.
 3. Import the project in Intellij. Install Lombok plugin. Enable annotation processors.
@@ -78,13 +62,13 @@ $ ./gradlew local-config:bootRun
 ```
 * Open up a second git-bash, and run the flights-detail itself:
 ```
-$ ./gradlew content-detail:bootRun
+$ ./gradlew sample-api:bootRun
 ```
 ## Swagger UI
-open `http://localhost:8080/content-delivery/swagger-ui.html` in any browser
+open `http://localhost:8080/swagger-ui.html` in any browser
 
 ## Configuration
-Configuration is represented as YAML and is available under the `config` folder. Different environment profiles are available. The non-profile designated YML `content-api.yml` is common for all environments.
+Configuration is represented as YAML and is available under the `config` folder. Different environment profiles are available. The non-profile designated YML `sample-api.yml` is common for all environments.
 
 ## Frameworks
 * [Spring Framework](http://projects.spring.io/spring-framework/) for [dependency injection and Web MVC framework](http://docs.spring.io/spring/docs/4.2.7.RELEASE/spring-framework-reference/htmlsingle/).
