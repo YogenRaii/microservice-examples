@@ -1,3 +1,0 @@
-rootProject.name = 'micro-services'
-include 'client-app'
-include 'movie-api'

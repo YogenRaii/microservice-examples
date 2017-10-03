@@ -1,0 +1,3 @@
+rootProject.name = 'feign-client-example'
+include 'client-app'
+include 'movie-api'
