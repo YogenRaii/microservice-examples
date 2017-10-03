@@ -12,10 +12,10 @@ import java.util.Arrays;
 
 @SpringBootApplication
 @EnableEurekaClient
-public class EurekaClientApplication {
+public class BookmarkServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(EurekaClientApplication.class, args);
+		SpringApplication.run(BookmarkServiceApplication.class, args);
 	}
 
 	@Bean
