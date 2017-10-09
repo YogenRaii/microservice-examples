@@ -1,6 +1,10 @@
 server:
   port: ${USER_SERVICE_PORT:9096}
 
+feign:
+  hystrix:
+    enabled: true
+
 eureka:
   client:
     serviceUrl:
