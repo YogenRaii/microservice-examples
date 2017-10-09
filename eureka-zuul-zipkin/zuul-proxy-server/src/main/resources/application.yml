@@ -5,11 +5,23 @@ eureka:
   client:
     serviceUrl:
       defaultZone: ${services.eureka-service.credentials.uri:http://127.0.0.1:8761}/eureka/
+    registerWithEureka: false
 zuul:
   routes:
     users:
       path: /users/**
       serviceId: user-service
+      stripPrefix: false
+ribbon:
+  eureka:
+    enabled: true
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
 
 ---
 spring:
