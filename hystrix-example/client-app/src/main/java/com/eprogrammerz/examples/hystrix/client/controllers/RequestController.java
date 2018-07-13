@@ -1,7 +1,7 @@
-package com.eprogrammerz.examples.controllers;
+package com.eprogrammerz.examples.hystrix.client.controllers;
 
-import com.eprogrammerz.examples.domain.Movie;
-import com.eprogrammerz.examples.services.MovieService;
+import com.eprogrammerz.examples.hystrix.client.domain.Movie;
+import com.eprogrammerz.examples.hystrix.client.services.MovieService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -21,7 +21,7 @@ public class RequestController {
     private MovieService movieService;
 
     @RequestMapping("/recommended")
-    public ResponseEntity<Movie> getRecommendedMovie(){
+    public ResponseEntity<Movie> getRecommendedMovie() {
         long movieOfTheDayId = getLuckyMovieId();
         log.info("Calling MovieService:findMovie({})", movieOfTheDayId);
         Movie movieRecommended = movieService.findMovie(movieOfTheDayId);
@@ -30,12 +30,12 @@ public class RequestController {
 
     /**
      * Helper method to provide the random long number
+     *
      * @return long number between 1200 and 1
      */
-    private long getLuckyMovieId(){
+    private long getLuckyMovieId() {
 
-        long id = (int)(new Random().nextDouble() * 4) + 1200;
-        return id;
+        return (int) (new Random().nextDouble() * 4) + 1200;
     }
 }
 

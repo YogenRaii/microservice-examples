@@ -1,6 +1,6 @@
-package com.eprogrammerz.examples.services;
+package com.eprogrammerz.examples.hystrix.client.services;
 
-import com.eprogrammerz.examples.domain.Movie;
+import com.eprogrammerz.examples.hystrix.client.domain.Movie;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.PathVariable;
 

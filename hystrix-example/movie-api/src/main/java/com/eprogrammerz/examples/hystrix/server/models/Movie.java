@@ -1,9 +1,6 @@
-package com.eprogrammerz.examples.domain;
+package com.eprogrammerz.examples.hystrix.server.models;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.io.Serializable;
 
@@ -12,10 +9,12 @@ import java.io.Serializable;
  */
 @Getter
 @Setter
+@NoArgsConstructor
 @AllArgsConstructor
 @ToString
 public class Movie implements Serializable {
-    private static final long serialVersionUID = 2281585426839510707L;
+    private static final long serialVersionUID = 2987521091221161580L;
+    private long id;
     private String name;
     private String directorName;
     private String rating;

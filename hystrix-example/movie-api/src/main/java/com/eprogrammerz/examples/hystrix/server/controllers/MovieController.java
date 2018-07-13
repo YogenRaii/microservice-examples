@@ -1,7 +1,7 @@
-package com.eprogrammerz.examples.controllers;
+package com.eprogrammerz.examples.hystrix.server.controllers;
 
-import com.eprogrammerz.examples.models.Movie;
-import com.eprogrammerz.examples.repositories.MovieRepository;
+import com.eprogrammerz.examples.hystrix.server.models.Movie;
+import com.eprogrammerz.examples.hystrix.server.repositories.MovieRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.Resource;

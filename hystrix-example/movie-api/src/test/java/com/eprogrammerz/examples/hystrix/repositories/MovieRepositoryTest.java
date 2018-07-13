@@ -1,5 +1,6 @@
-package com.eprogrammerz.examples.repositories;
+package com.eprogrammerz.examples.hystrix.repositories;
 
+import com.eprogrammerz.examples.hystrix.server.repositories.MovieRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;

@@ -1,9 +1,8 @@
-package com.eprogrammerz.examples.services;
+package com.eprogrammerz.examples.hystrix.client.services;
 
-import com.eprogrammerz.examples.domain.Movie;
+import com.eprogrammerz.examples.hystrix.client.domain.Movie;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 
 
 /**
@@ -15,7 +14,7 @@ public class MovieService {
     @Autowired
     MovieApi movieApi;
 
-    public Movie findMovie(Long id){
+    public Movie findMovie(Long id) {
         Movie movieOfTheDay = movieApi.getMovie(id);
         return movieOfTheDay;
     }

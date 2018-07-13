@@ -1,6 +1,6 @@
-package com.eprogrammerz.examples.repositories;
+package com.eprogrammerz.examples.hystrix.server.repositories;
 
-import com.eprogrammerz.examples.models.Movie;
+import com.eprogrammerz.examples.hystrix.server.models.Movie;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
