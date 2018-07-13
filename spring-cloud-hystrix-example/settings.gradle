@@ -1,0 +1,3 @@
+rootProject.name = 'spring-cloud-hystrix-example'
+include 'movie-api'
+include 'client-app'
