@@ -3,24 +3,19 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.eprogrammerz.examples.cloud</groupId>
-	<artifactId>zipkin-server</artifactId>
+	<groupId>com.eprogrammerz.examples</groupId>
+	<artifactId>user-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>zipkin-server</name>
-	<description>Demo project for Zipkin Server</description>
+	<name>user-service</name>
+	<description>Demo project for Eureka Client</description>
 
 	<parent>
 		<groupId>com.eprogrammerz.examples</groupId>
-		<artifactId>eureka-zuul-zipkin</artifactId>
+		<artifactId>spring-cloud-eureka-zipkin</artifactId>
 		<version>1.0-SNAPSHOT</version>
 	</parent>
-
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-	</properties>
 
 	<dependencies>
 		<dependency>
@@ -29,19 +24,31 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-sleuth-zipkin-stream</artifactId>
+			<artifactId>spring-cloud-starter-feign</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-hystrix</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+
+		<!--enable tracing with sleuth and zipkin-->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-sleuth</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>io.zipkin.java</groupId>
-			<artifactId>zipkin-autoconfigure-ui</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-stream-rabbit</artifactId>
+			<artifactId>spring-cloud-starter-zipkin</artifactId>
 		</dependency>
 
 		<dependency>
@@ -50,6 +57,4 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
-
 </project>
