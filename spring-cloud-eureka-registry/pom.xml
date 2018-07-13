@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.eprogrammerz.examples</groupId>
-    <artifactId>eureka-service-registry</artifactId>
+    <artifactId>spring-cloud-eureka-registry</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
